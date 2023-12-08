@@ -34,7 +34,7 @@ export default function Home() {
             params+="&searchBy="+searchBy;
             params+="&searchValue="+searchValue;
         }
-        fetch("http://localhost:5000/get_users?" + params)
+        fetch("https://heliverse-data-api.onrender.com/get_users?" + params)
             .then((res) => {
                 return res.json();
             })
@@ -44,7 +44,7 @@ export default function Home() {
     }, [start, domain, gender, available, searchBy, searchValue])
 
     useEffect(() => {
-        fetch("http://localhost:5000/get_domains_genders")
+        fetch("https://heliverse-data-api.onrender.com/get_domains_genders")
             .then((res) => {
                 return res.json();
             })
